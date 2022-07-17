@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "fff6db9c-f823-4d2e-85ed-7368fc3f6e82",
+		"name": "JavaEE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jaxb",
+			"item": [
+				{
+					"name": "marshalToXML",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jaxb-tutorial-1.0-SNAPSHOT/rest/marshal?firstname=Tom&lastname=Smith&hireDate=2020-06-07&ssn=123456789&salary=25000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jaxb-tutorial-1.0-SNAPSHOT",
+								"rest",
+								"marshal"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Tom"
+								},
+								{
+									"key": "lastname",
+									"value": "Smith"
+								},
+								{
+									"key": "hireDate",
+									"value": "2020-06-07"
+								},
+								{
+									"key": "ssn",
+									"value": "123456789"
+								},
+								{
+									"key": "salary",
+									"value": "25000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unmarshalFromXML",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:employees xmlns:ns2=\"urn:employees\">\n    <employee>\n        <firstName>Tom</firstName>\n        <lastName>Smith</lastName>\n        <ssn>123456789</ssn>\n        <salary>25000.0</salary>\n        <hireDate>2020-06-07+02:00</hireDate>\n    </employee>\n    <employee>\n        <firstName>Max</firstName>\n        <lastName>Payne</lastName>\n        <ssn>45678974</ssn>\n        <salary>525000.0</salary>\n        <hireDate>2020-06-27+02:00</hireDate>\n    </employee>\n    <employee>\n        <firstName>Captain</firstName>\n        <lastName>Crunch</lastName>\n        <ssn>123456789</ssn>\n        <salary>725000.0</salary>\n        <hireDate>2020-06-07+02:00</hireDate>\n    </employee>\n</ns2:employees>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jaxb-tutorial-1.0-SNAPSHOT/rest/unmarshal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jaxb-tutorial-1.0-SNAPSHOT",
+								"rest",
+								"unmarshal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jpa",
+			"item": [
+				{
+					"name": "Employee",
+					"item": [
+						{
+							"name": "getEmployees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employees",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEmployeeById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createFirstEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Tim\",\n    \"lastName\": \"Smith\",\n    \"ssn\": \"555-333-124\",\n    \"salary\": 121437,\n    \"hireDate\": \"2022-07-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSecondEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Tom\",\n    \"lastName\": \"Holland\",\n    \"ssn\": \"123-751-004\",\n    \"salary\": 57856,\n    \"hireDate\": \"2004-12-01\",\n    \"supervisor\": {\n        \"id\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createThirdEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Stacey\",\n    \"lastName\": \"Summerset\",\n    \"ssn\": \"459-830-489\",\n    \"salary\": 250000,\n    \"hireDate\": \"1999-03-01\",\n    \"supervisor\": {\n        \"id\": 2\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createFourthEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Tony\",\n    \"lastName\": \"Sattleworth\",\n    \"ssn\": \"876-452-111\",\n    \"salary\": 254645,\n    \"hireDate\": \"1999-03-01\",\n    \"supervisor\": {\n        \"id\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createFifthEmployee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Marc\",\n    \"lastName\": \"Worthington\",\n    \"ssn\": \"999-666-757\",\n    \"salary\": 12500,\n    \"hireDate\": \"1997-06-01\",\n    \"supervisor\": {\n        \"id\": 2\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteEmployee",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Department",
+					"item": [
+						{
+							"name": "getDepartments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/departments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"departments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDepartmentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/department/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"department",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDepartment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"IT-Solutions\",\n    \"description\": \"Working on your progress\",\n    \"manager\": {\n        \"id\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/department",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"department"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Project",
+					"item": [
+						{
+							"name": "createProject",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Saving the planet\",\n    \"startDate\": \"2011-05-05\",\n    \"finishDate\": \"2089-12-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/project",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"project"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createProject2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"From Monolith to Microservice\",\n    \"startDate\": \"2022-12-31\",\n    \"finishDate\": \"2025-12-31\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/project",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"project"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSecondEmployee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Gerald\",\n    \"hireDate\": \"2004-11-01\",\n    \"id\": 2,\n    \"lastName\": \"Hulland\",\n    \"salary\": 57856.0,\n    \"ssn\": \"123-751-004\",\n    \"supervisor\": {\n        \"id\": 1\n    },\n    \"projects\": [\n        {\n            \"id\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateFirstEmployee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Tina\",\n    \"lastName\": \"Smith\",\n    \"id\": 1,\n    \"ssn\": \"555-333-124\",\n    \"salary\": 121437,\n    \"hireDate\": \"2022-07-01\",\n    \"projects\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 2\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/jpa-tutorial-1.0-SNAPSHOT/jpa/employee",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"jpa-tutorial-1.0-SNAPSHOT",
+										"jpa",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
