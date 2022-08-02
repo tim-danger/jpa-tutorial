@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fff6db9c-f823-4d2e-85ed-7368fc3f6e82",
+		"_postman_id": "87cfed6c-fa26-46ed-bb05-346feb22a668",
 		"name": "JavaEE",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -394,7 +394,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"description\": \"Saving the planet\",\n    \"startDate\": \"2011-05-05\",\n    \"finishDate\": \"2089-12-31\"\n}",
+									"raw": "{\n    \"description\": \"Project Management II\",\n    \"startDate\": \"2011-05-05\",\n    \"finishDate\": \"2018-12-31\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -448,13 +448,13 @@
 							"response": []
 						},
 						{
-							"name": "updateSecondEmployee",
+							"name": "updateFirstEmployee",
 							"request": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Gerald\",\n    \"hireDate\": \"2004-11-01\",\n    \"id\": 2,\n    \"lastName\": \"Hulland\",\n    \"salary\": 57856.0,\n    \"ssn\": \"123-751-004\",\n    \"supervisor\": {\n        \"id\": 1\n    },\n    \"projects\": [\n        {\n            \"id\": 1\n        }\n    ]\n}",
+									"raw": "{\n    \"firstName\": \"Tim\",\n    \"lastName\": \"Smith\",\n    \"id\": 1,\n    \"ssn\": \"555-333-124\",\n    \"salary\": 121437,\n    \"hireDate\": \"2022-07-01\",\n    \"projects\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 2\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -478,13 +478,13 @@
 							"response": []
 						},
 						{
-							"name": "updateFirstEmployee",
+							"name": "updateSecondEmployee",
 							"request": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Tina\",\n    \"lastName\": \"Smith\",\n    \"id\": 1,\n    \"ssn\": \"555-333-124\",\n    \"salary\": 121437,\n    \"hireDate\": \"2022-07-01\",\n    \"projects\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 2\n        }\n    ]\n}",
+									"raw": "{\n    \"firstName\": \"Tom\",\n    \"hireDate\": \"2004-11-01\",\n    \"id\": 2,\n    \"lastName\": \"Holland\",\n    \"salary\": 57856.0,\n    \"ssn\": \"123-751-004\",\n    \"supervisor\": {\n        \"id\": 1\n    },\n    \"projects\": [\n        {\n            \"id\": 1\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
